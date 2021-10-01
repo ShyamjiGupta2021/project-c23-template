@@ -32,6 +32,13 @@ function setup() {
 
   player = Bodies.rectangle(250, playerBase.position.y - 160, 50, 180, options);
   World.add(world,player)
+
+  playerArcher = new PlayerArcher(
+    340,
+    playerBase.position.y - 112,
+    120,
+    120
+  );
 }
 
 function draw() {
@@ -41,6 +48,8 @@ function draw() {
   image(baseimage,playerBase.position.x,playerBase.position.y,180,150)
   image(playerimage,player.position.x,player.position.y,50,180)
 
+  playerArcher.display();
+  
   // Title
   fill("#FFFF");
   textAlign("center");
